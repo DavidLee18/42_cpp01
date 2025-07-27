@@ -11,18 +11,20 @@ int main(int argc, char** argv) {
 	std::cout << "sample zombies:" << std::endl;
 	Zombie foo;
 	std::string name = "Foo";
-	foo.setName(name);
-	foo.announce();
+	if (foo.setName(name))
+		foo.announce();
 	Zombie bar;
 	name = "Bar";
-	bar.setName(name);
-	bar.announce();
+	if (bar.setName(name))
+		bar.announce();
 	std::cout << "zombie on the heap:" << std::endl;
 	name = "Mark";
 	Zombie* mark = new Zombie;
-	mark->setName(name);
-	mark->announce();
-	delete mark;
+	if (mark) {
+		if (mark->setName(name))
+			mark->announce();
+		delete mark;
+	}
 	std::cout << "zombie horde on the heap:" << std::endl;
 	name = "Steve";
 	std::istringstream ss(argv[1]);

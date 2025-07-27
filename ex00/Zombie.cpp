@@ -1,9 +1,7 @@
 #include "Zombie.h"
 #include <iostream>
 
-Zombie::Zombie() {
-	name = "";
-}
+Zombie::Zombie(): name() {}
 
 Zombie::~Zombie(){
 	std::cout << "killed a zombie named \"" << name << "\"" << std::endl;
