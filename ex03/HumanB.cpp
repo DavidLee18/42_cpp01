@@ -1,6 +1,6 @@
 #include "HumanB.h"
 
-HumanB::HumanB(std::string n): name(n) {}
+HumanB::HumanB(std::string n): name(n), arm(NULL) {}
 
 void HumanB::attack() {
 	if (arm)
